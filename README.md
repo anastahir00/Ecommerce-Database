@@ -1,5 +1,11 @@
 # E-Commerce Order Management System - Database Design
+## Technologies Used
 
+- Microsoft SQL Server 2022
+- SQL Server Management Studio (SSMS)
+- T-SQL
+- draw.io
+- Git & GitHub
 ## Project Information
 
 | Field | Detail |
