@@ -1,20 +1,56 @@
-# E-Commerce Order Management System - Database Design
-## Technologies Used
+# 🛒 E-Commerce Order Management System - Database Design
 
-- Microsoft SQL Server 2022
-- SQL Server Management Studio (SSMS)
-- T-SQL
-- draw.io
-- Git & GitHub
-## Project Information
+![SQL Server](https://img.shields.io/badge/SQL_Server-2022-CC2927?logo=microsoft-sql-server&logoColor=white)
+![T-SQL](https://img.shields.io/badge/T--SQL-0078D4?logo=sql&logoColor=white)
+![SSMS](https://img.shields.io/badge/SSMS-2022-CC2927?logo=microsoft&logoColor=white)
+![draw.io](https://img.shields.io/badge/draw.io-ERD-F08705?logo=diagramsdotnet&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)
+![Status](https://img.shields.io/badge/Status-In_Progress-yellow)
+![Version](https://img.shields.io/badge/Version-1.0-blue)
+
+> A fully normalized (3NF) relational database for E-Commerce Order Management System built with Microsoft SQL Server and T-SQL.
+
+---
+
+## 📋 Table of Contents
+
+- [Technologies Used](#-technologies-used)
+- [Project Information](#-project-information)
+- [Team Members](#-team-members)
+- [Database Schema](#-database-schema)
+- [Key Technical Features](#-key-technical-features)
+- [ER Diagram](#-er-diagram)
+- [Deliverables Progress](#-deliverables-progress)
+- [How to Deploy](#-how-to-deploy)
+- [Related Projects](#-related-projects)
+- [Next Phase](#-next-phase)
+
+---
+
+## 🛠️ Technologies Used
+
+| Category | Technology |
+|----------|------------|
+| **Database** | Microsoft SQL Server 2022 |
+| **Query Language** | T-SQL (Transact-SQL) |
+| **Management Tool** | SQL Server Management Studio (SSMS) |
+| **Diagramming** | draw.io / dbdiagram.io |
+| **Version Control** | Git & GitHub |
+
+---
+
+## 📊 Project Information
 
 | Field | Detail |
 |-------|--------|
 | **Course** | Database Systems (CC230L) |
 | **Instructor** | Sir Shahzaib Mushtaq Shah |
-| **Submission Date** | May 15, 2026 |
+| **Submission Date** | June 10, 2026 |
 
-## Team Members
+---
+
+## 👥 Team Members
 
 | Name | Student ID |
 |------|------------|
@@ -23,50 +59,107 @@
 | Zohaib Ahmad | F2024266251 |
 | Maniha Ashraf | F20242661269 |
 
-## Project Overview
+---
 
-Relational database design for an E-Commerce Order Management System using Microsoft SQL Server and T-SQL. Models complete lifecycle of online retail transactions from customer registration through order placement, payment, and inventory updates.
+## 📖 Project Overview
 
-## Database Schema (9 Tables)
+This relational database design simulates the complete lifecycle of online retail transactions — from customer registration and product browsing through order placement, payment, and inventory updates — using **Microsoft SQL Server** and **T-SQL**.
 
-| Table | Description |
-|-------|-------------|
-| customers | Customer information (6 columns) |
-| addresses | Shipping/billing addresses (7 columns) |
-| categories | Product hierarchy (self-referencing) (3 columns) |
-| products | Product catalog (7 columns) |
-| inventory | Stock tracking (5 columns) |
-| orders | Order header (9 columns) |
-| order_items | Line items with computed column (6 columns) |
-| payments | Transaction records (6 columns) |
-| order_status_log | Audit trail (5 columns) |
+### Key Capabilities
 
-## Key Technical Features
+- ✅ Customer and address management
+- ✅ Product catalog with hierarchical categories (self-referencing FK)
+- ✅ Inventory tracking with reorder threshold alerts
+- ✅ Order processing with computed totals
+- ✅ Payment recording and status tracking
+- ✅ Automated triggers for inventory decrement and audit logging
+- ✅ Analytical reporting queries (RFM, segmentation, turnover)
+
+---
+
+## 🗄️ Database Schema (9 Tables - 3NF)
+
+| # | Table | Description | Columns |
+|---|-------|-------------|---------|
+| 1 | customers | Customer information | 6 |
+| 2 | addresses | Shipping/billing addresses | 7 |
+| 3 | categories | Product hierarchy (self-referencing) | 3 |
+| 4 | products | Product catalog | 7 |
+| 5 | inventory | Stock tracking | 5 |
+| 6 | orders | Order header | 9 |
+| 7 | order_items | Line items with computed column | 6 |
+| 8 | payments | Transaction records | 6 |
+| 9 | order_status_log | Audit trail | 5 |
+
+### Entity Types
+
+| Type | Entities |
+|------|----------|
+| **Strong Entities** | customers, categories, products, inventory, orders |
+| **Weak Entities** | addresses, order_items, payments, order_status_log |
+| **Self-Referencing** | categories (parent_category_id) |
+
+---
+
+## ⚙️ Key Technical Features
 
 | Feature | Description |
 |---------|-------------|
-| Normalization | 3NF design |
-| Triggers | Inventory decrement + Order status audit |
-| Computed Column | line_total AS (quantity * unit_price) PERSISTED |
-| Self-Referencing | categories (parent_category_id) |
-| Analytical Queries | Monthly revenue, top products, customer segmentation, low stock alerts |
+| **Normalization** | 3NF (1NF, 2NF, 3NF compliant) |
+| **Triggers** | Inventory decrement + Order status audit + Single default address |
+| **Computed Column** | `line_total AS (quantity * unit_price) PERSISTED` |
+| **Self-Referencing** | `categories.parent_category_id` for hierarchy |
+| **Indexes** | 15+ performance indexes |
+| **Stored Procedures** | Monthly revenue, top products, low stock alerts |
+| **Analytical Queries** | 10 BI queries (RFM analysis, customer segmentation, turnover) |
 
-## Deliverables
+---
 
-- [x] Project Proposal Document
-- [ ] ER Diagram (draw.io)
-- [ ] Complete SQL Schema
-- [ ] Triggers Implementation
-- [ ] Stored Procedures
-- [ ] Sample Data (50+ rows per table)
-- [ ] Analytical Queries
-- [ ] Final Report
+## 🖼️ ER Diagram
 
-## Related Projects
+![ER Diagram](docs/ER_Diagram.png)
 
-- [OOP E-Commerce System](https://github.com/anastahir00/OOP-Ecommerce-System)
-- [DSA E-Commerce System](https://github.com/anastahir00/Ecommerce-DSA)
+*Figure 1: Entity Relationship Diagram showing 9 tables, relationships, and cardinalities*
 
-## Next Phase
+📄 [View Complete ER Documentation](docs/ERD_Final.md)
 
-Complete SQL implementation and C# .NET desktop application.
+---
+
+## 📋 Deliverables Progress
+
+| # | Deliverable | Status | Date |
+|---|-------------|--------|------|
+| 1 | Project Proposal Document | ✅ Complete | May 24, 2026 |
+| 2 | ER Diagram (draw.io) | ✅ Complete | June 10, 2026 |
+| 3 | 3NF Normalization Documentation | ✅ Complete | May 25, 2026 |
+| 4 | Complete SQL Schema | 🔜 Pending | - |
+| 5 | Triggers Implementation | 🔜 Pending | - |
+| 6 | Stored Procedures | 🔜 Pending | - |
+| 7 | Sample Data (50+ rows per table) | 🔜 Pending | - |
+| 8 | Analytical Queries | 🔜 Pending | - |
+| 9 | Final Report | 🔜 Pending | - |
+
+---
+
+## 🚀 How to Deploy
+
+### Prerequisites
+- Microsoft SQL Server 2019/2022
+- SQL Server Management Studio (SSMS)
+
+### Deployment Steps
+
+```sql
+-- Step 1: Open SQL Server Management Studio
+-- Step 2: Connect to your SQL Server instance
+-- Step 3: Execute the complete script
+-- File location: sql/E-Commerce Project.sql
+
+-- The script includes:
+-- ✅ CREATE DATABASE
+-- ✅ 9 tables with constraints
+-- ✅ Foreign keys and indexes
+-- ✅ 3 triggers
+-- ✅ 3 stored procedures
+-- ✅ 10 analytical queries
+-- ✅ Sample data (50+ rows)
