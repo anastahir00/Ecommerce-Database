@@ -325,43 +325,43 @@ INSERT INTO categories (name, parent_category_id) VALUES
 ('iPhone', 6),
 ('Wireless Headphones', 8);
 
--- Insert Products (20 products)
+-- Insert Products (20 products) - FIXED CATEGORY IDs
 INSERT INTO products (category_id, name, description, price, weight_kg, sku, is_active) VALUES
--- Electronics - Laptops
-(5, 'Gaming Pro X', 'High-performance gaming laptop with RGB keyboard', 1499.99, 2.5, 'LAP-GPX-001', 1),
-(5, 'Ultra Slim Book', 'Lightweight ultrabook for professionals', 1099.99, 1.2, 'LAP-USB-002', 1),
-(5, 'Budget Laptop', 'Affordable laptop for daily tasks', 599.99, 1.8, 'LAP-BUD-003', 1),
+-- Electronics - Laptops (category_id 6 = Laptops)
+(6, 'Gaming Pro X', 'High-performance gaming laptop with RGB keyboard', 1499.99, 2.5, 'LAP-GPX-001', 1),
+(6, 'Ultra Slim Book', 'Lightweight ultrabook for professionals', 1099.99, 1.2, 'LAP-USB-002', 1),
+(6, 'Budget Laptop', 'Affordable laptop for daily tasks', 599.99, 1.8, 'LAP-BUD-003', 1),
 
--- Electronics - Smartphones
-(6, 'Galaxy S25', 'Latest Android flagship', 999.99, 0.2, 'PHN-GAL-001', 1),
-(6, 'Pixel 9 Pro', 'Pure Android experience', 899.99, 0.21, 'PHN-PIX-002', 1),
+-- Electronics - Smartphones (category_id 7 = Smartphones)
+(7, 'Galaxy S25', 'Latest Android flagship', 999.99, 0.2, 'PHN-GAL-001', 1),
+(7, 'Pixel 9 Pro', 'Pure Android experience', 899.99, 0.21, 'PHN-PIX-002', 1),
 
--- Electronics - Smartphones (iPhone subcategory)
-(13, 'iPhone 16 Pro', 'Apple flagship with A18 chip', 1199.99, 0.22, 'PHN-IP16-003', 1),
-(13, 'iPhone 16', 'Standard iPhone model', 999.99, 0.21, 'PHN-IP16-004', 1),
+-- Electronics - iPhone (category_id 16 = iPhone)
+(16, 'iPhone 16 Pro', 'Apple flagship with A18 chip', 1199.99, 0.22, 'PHN-IP16-003', 1),
+(16, 'iPhone 16', 'Standard iPhone model', 999.99, 0.21, 'PHN-IP16-004', 1),
 
--- Electronics - Headphones
-(8, 'Noise Cancelling Pro', 'Premium ANC headphones', 299.99, 0.3, 'HP-PRO-001', 1),
-(14, 'Sports Wireless Earbuds', 'Sweat-resistant earbuds', 89.99, 0.05, 'HP-SPT-002', 1),
+-- Electronics - Headphones (category_id 9 = Headphones)
+(9, 'Noise Cancelling Pro', 'Premium ANC headphones', 299.99, 0.3, 'HP-PRO-001', 1),
+(17, 'Sports Wireless Earbuds', 'Sweat-resistant earbuds', 89.99, 0.05, 'HP-SPT-002', 1),
 
--- Clothing - Men's
-(9, 'Men''s Cotton T-Shirt', '100% cotton, regular fit', 24.99, 0.2, 'CLM-TSH-001', 1),
-(9, 'Men''s Denim Jeans', 'Classic blue jeans', 59.99, 0.6, 'CLM-JEAN-002', 1),
-(9, 'Men''s Winter Jacket', 'Water-resistant puffer jacket', 129.99, 1.1, 'CLM-JKT-003', 1),
+-- Clothing - Men's (category_id 10 = Men's Clothing)
+(10, 'Men''s Cotton T-Shirt', '100% cotton, regular fit', 24.99, 0.2, 'CLM-TSH-001', 1),
+(10, 'Men''s Denim Jeans', 'Classic blue jeans', 59.99, 0.6, 'CLM-JEAN-002', 1),
+(10, 'Men''s Winter Jacket', 'Water-resistant puffer jacket', 129.99, 1.1, 'CLM-JKT-003', 1),
 
--- Clothing - Women's
-(10, 'Women''s Yoga Pants', 'Stretchy comfortable leggings', 39.99, 0.3, 'CLW-YOGA-001', 1),
-(10, 'Women''s Blouse', 'Silk blend work blouse', 49.99, 0.25, 'CLW-BLOUSE-002', 1),
+-- Clothing - Women's (category_id 11 = Women's Clothing)
+(11, 'Women''s Yoga Pants', 'Stretchy comfortable leggings', 39.99, 0.3, 'CLW-YOGA-001', 1),
+(11, 'Women''s Blouse', 'Silk blend work blouse', 49.99, 0.25, 'CLW-BLOUSE-002', 1),
 
--- Books
+-- Books (category_id 3 = Books)
 (3, 'SQL Mastery', 'Complete guide to SQL databases', 49.99, 0.8, 'BK-SQL-001', 1),
 (3, 'Data Science Handbook', 'Machine learning and analytics', 69.99, 1.0, 'BK-DS-002', 1),
 
--- Home & Garden
+-- Home & Garden (category_id 4 = Home & Garden)
 (4, 'Coffee Maker Deluxe', 'Programmable coffee machine', 89.99, 2.8, 'HG-COFF-001', 1),
 (4, 'Garden Tool Set', '10-piece gardening kit', 49.99, 3.2, 'HG-GARD-002', 1),
 
--- Sports
+-- Sports (category_id 5 = Sports)
 (5, 'Yoga Mat Premium', 'Non-slip exercise mat', 29.99, 0.9, 'SP-YOGA-001', 1),
 (5, 'Dumbbell Set 20kg', 'Adjustable dumbbells', 79.99, 20.0, 'SP-DUMB-002', 1);
 
