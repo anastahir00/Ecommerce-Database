@@ -1,8 +1,8 @@
 /* ============================================================
    E-COMMERCE ORDER MANAGEMENT SYSTEM
    Database: SQL Server
-   Author: [Your Name]
-   Date: May 15, 2026
+   Author: Muhammad Anas Tahir
+   Date: June 12, 2026
    ============================================================ */
 
 -- ============================================================
