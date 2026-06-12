@@ -4,7 +4,12 @@
    Author: Muhammad Anas Tahir
    Date: June 12, 2026
    ============================================================ */
+-- Create Database first
+CREATE DATABASE EcommerceDB;
+GO
 
+USE EcommerceDB;
+GO
 -- ============================================================
 -- PART 1: CLEANUP (Run this first if tables already exist)
 -- ============================================================
