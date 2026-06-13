@@ -3,5 +3,6 @@
 *.trn
 *.ldf
 *.mdf
+~$*.docx
 .DS_Store
 Thumbs.db
